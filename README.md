@@ -3,7 +3,7 @@ lock
 
 This is a fork of [i3lock-fancy](https://github.com/meskarune/i3lock-fancy), an i3lock bash script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
 
-Dependancies
+Dependencies
 ------------
 * [i3lock-color-git](https://github.com/eBrnd/i3lock-color)
 * imagemagick
