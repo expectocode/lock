@@ -1,11 +1,7 @@
-i3lock-fancy
+lock
 ============
 
-This is an i3lock bash script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text
-
-website: [github pages website](http://meskarune.github.io/i3lock-fancy/)
-
-![screen shot of lockscreen](https://raw.githubusercontent.com/meskarune/i3lock-fancy/master/screenshot.png)
+This is a fork of [i3lock-fancy](https://github.com/meskarune/i3lock-fancy), an i3lock bash script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
 
 Dependancies
 ------------
@@ -16,7 +12,7 @@ Dependancies
 
 The lock screen in action:
 
-![lockscreen animation](https://raw.githubusercontent.com/meskarune/i3lock-fancy/master/action.gif)
+![lockscreen animation](https://u.teknik.io/LbE9ac.mp4)
 
 Use this with xautolock to automatically lock the screen after a set time.
 
