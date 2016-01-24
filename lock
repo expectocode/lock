@@ -10,7 +10,7 @@ SCRIPTPATH=`pwd`
 popd > /dev/null
 
 quotegenProgram="/home/tanuj/Code/build-quotesCategories-Desktop-Debug/quotesCategories"
-#quotegenProgram="./quoteGeneratorSnapshot" # uncomment this after building the c++ program 
+#quotegenProgram="$SCRIPTPATH/quoteGeneratorSnapshot" # uncomment this after building the c++ program 
 
 IMAGE=$(mktemp).png
 #TEXT="`faker-cli -x phrase`"
