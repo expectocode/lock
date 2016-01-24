@@ -56,7 +56,7 @@ if [ "$COLOR" -gt "$VALUE" ]; then #white background image and black text
         -filter Gaussian -resize 20% -define filter:sigma=8.5 -resize 500.5% \
         -font Liberation-Sans -pointsize 32 -fill black  -gravity center \
         -annotate +0+160 "$TEXT" \
-        $SCRIPTPATH/$LOCKICONDARK.png -gravity center -composite $IMAGE
+        $SCRIPTPATH/images/$LOCKICONDARK.png -gravity center -composite $IMAGE
     PARAM='--textcolor=00000000 --insidecolor=0ad65c1c --ringcolor=0000003e \
         --linecolor=00000000 --keyhlcolor=74e85888 --ringvercolor=ffffff00 \
         --insidevercolor=ffffff1c --ringwrongcolor=ffffff55 --insidewrongcolor=bf09095c'
@@ -65,7 +65,7 @@ else #black
         -filter Gaussian -resize 20% -define filter:sigma=8.5 -resize 500.5% \
         -font Liberation-Sans -pointsize 32 -fill white -gravity Center \
         -annotate +0+160 "$TEXT" \
-        $SCRIPTPATH/$LOCKICONREG.png -gravity center -composite $IMAGE
+        $SCRIPTPATH/images/$LOCKICONREG.png -gravity center -composite $IMAGE
     PARAM='--textcolor=ffffff00 --insidecolor=0ad65c6c --ringcolor=ffffff3e \
         --linecolor=ffffff00 --keyhlcolor=74e85888 --ringvercolor=00000000 \
         --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=bf20151c'
