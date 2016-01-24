@@ -9,12 +9,16 @@ pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd`
 popd > /dev/null
 
+quotegenProgram="/home/tanuj/Code/build-quotesCategories-Desktop-Debug/quotesCategories"
+#quotegenProgram="./quoteGeneratorSnapshot" # uncomment this after building the c++ program 
+
 IMAGE=$(mktemp).png
 #TEXT="`faker-cli -x phrase`"
-FULLTEXT="`/home/tanuj/Code/build-quotesCatogories-Desktop-Debug/quotesCategories`" 
+FULLTEXT="`$quotegenProgram`" 
 firstchar="`echo ${FULLTEXT:0:1}`"
 TEXT="\"`echo ${FULLTEXT:1}`\""
 
+#default icons, these values will be overwritten
 LOCKICONREG="lock"
 LOCKICONDARK="lockdark"
 
@@ -26,16 +30,16 @@ elif [ "$firstchar" == "i" ];then #if itcrowd quote
 	LOCKICONDARK="roundmoss"
 elif [ "$firstchar" == "s" ];then #if starwars quote
 	LOCKICONREG="jediwhite"
-        LOCKICONDARK="vader"
+    LOCKICONDARK="vader"
 elif [ "$firstchar" == "p" ];then #if potter quote
 	LOCKICONREG="scarheadwhite"
-        LOCKICONDARK="scarhead"
+    LOCKICONDARK="scarhead"
 elif [ "$firstchar" == "l" ];then #if sherlock quote
-        LOCKICONREG="pipewhite"
-        LOCKICONDARK="pipe"
+    LOCKICONREG="pipewhite"
+    LOCKICONDARK="pipe"
 elif [ "$firstchar" == "m" ];then #if meme quote
-        LOCKICONREG="garlicbright"
-        LOCKICONDARK="garlicdark"
+    LOCKICONREG="garlicbright"
+    LOCKICONDARK="garlicdark"
 fi
 
 # l10n support
