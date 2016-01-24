@@ -33,6 +33,9 @@ elif [ "$firstchar" == "p" ];then #if potter quote
 elif [ "$firstchar" == "l" ];then #if sherlock quote
         LOCKICONREG="pipewhite"
         LOCKICONDARK="pipe"
+elif [ "$firstchar" == "m" ];then #if meme quote
+        LOCKICONREG="garlicbright"
+        LOCKICONDARK="garlicdark"
 fi
 
 # l10n support
