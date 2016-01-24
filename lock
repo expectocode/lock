@@ -2,15 +2,39 @@
 
 # Dependencies: imagemagick, i3lock-color-git, scrot
 
-IMAGE=$(mktemp).png
-TEXT="Type password to unlock"
 
 # get path where the script is located
 # its used for the lock icon
 pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd`
 popd > /dev/null
- 
+
+IMAGE=$(mktemp).png
+#TEXT="`faker-cli -x phrase`"
+FULLTEXT="`$SCRIPTPATH/quotesCatogories`" 
+firstchar="`echo ${FULLTEXT:0:1}`"
+TEXT="`echo ${FULLTEXT:1}`" 
+
+LOCKICONREG="lock"
+LOCKICONDARK="lockdark"
+
+if [ "$firstchar" == "h" ];then #if hacker quote
+	LOCKICONREG="lock"
+	LOCKICONDARK="lockdark"
+elif [ "$firstchar" == "i" ];then #if itcrowd quote
+	LOCKICONREG="roundmoss"
+	LOCKICONDARK="roundmoss"
+elif [ "$firstchar" == "s" ];then #if starwars quote
+	LOCKICONREG="jediwhite"
+        LOCKICONDARK="vader"
+elif [ "$firstchar" == "p" ];then #if potter quote
+	LOCKICONREG="scarheadwhite"
+        LOCKICONDARK="scarhead"
+elif [ "$firstchar" == "l" ];then #if sherlock quote
+        LOCKICONREG="pipewhite"
+        LOCKICONDARK="pipe"
+fi
+
 # l10n support
 case $LANG in
     fr_* ) TEXT="Entrez votre mot de passe" ;; # Français
@@ -25,24 +49,26 @@ COLOR=`convert $IMAGE -colorspace hsb -resize 1x1 txt:- | sed -E '/.*$/ {
                              s/.*\n.*([0-9]{1,2}[^\.])\.[0-9]+%\)$/\1/
                              }'`;
 # pixelate: -scale 10% -scale 1000%
+# sigma was 1.5
+
 if [ "$COLOR" -gt "$VALUE" ]; then #white background image and black text
     convert $IMAGE -level 0%,100%,0.6 \
-        -filter Gaussian -resize 20% -define filter:sigma=1.5 -resize 500.5% \
-        -font Liberation-Sans -pointsize 26 -fill black -gravity center \
+        -filter Gaussian -resize 20% -define filter:sigma=8.5 -resize 500.5% \
+        -font Liberation-Sans -pointsize 32 -fill black  -gravity center \
         -annotate +0+160 "$TEXT" \
-        $SCRIPTPATH/lockdark.png -gravity center -composite $IMAGE
-    PARAM='--textcolor=00000000 --insidecolor=0000001c --ringcolor=0000003e \
-        --linecolor=00000000 --keyhlcolor=ffffff80 --ringvercolor=ffffff00 \
-        --insidevercolor=ffffff1c --ringwrongcolor=ffffff55 --insidewrongcolor=ffffff1c'
+        $SCRIPTPATH/$LOCKICONDARK.png -gravity center -composite $IMAGE
+    PARAM='--textcolor=00000000 --insidecolor=0ad65c1c --ringcolor=0000003e \
+        --linecolor=00000000 --keyhlcolor=74e85888 --ringvercolor=ffffff00 \
+        --insidevercolor=ffffff1c --ringwrongcolor=ffffff55 --insidewrongcolor=bf09095c'
 else #black
     convert $IMAGE -level 0%,100%,0.6 \
-        -filter Gaussian -resize 20% -define filter:sigma=1.5 -resize 500.5% \
-        -font Liberation-Sans -pointsize 26 -fill white -gravity center \
+        -filter Gaussian -resize 20% -define filter:sigma=8.5 -resize 500.5% \
+        -font Liberation-Sans -pointsize 32 -fill white -gravity Center \
         -annotate +0+160 "$TEXT" \
-        $SCRIPTPATH/lock.png -gravity center -composite $IMAGE
-    PARAM='--textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e \
-        --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 \
-        --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c'
+        $SCRIPTPATH/$LOCKICONREG.png -gravity center -composite $IMAGE
+    PARAM='--textcolor=ffffff00 --insidecolor=0ad65c6c --ringcolor=ffffff3e \
+        --linecolor=ffffff00 --keyhlcolor=74e85888 --ringvercolor=00000000 \
+        --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=bf20151c'
 fi
 
 # try to use a forked version of i3lock with prepared parameters
