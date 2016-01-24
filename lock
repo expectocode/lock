@@ -11,7 +11,7 @@ popd > /dev/null
 
 IMAGE=$(mktemp).png
 #TEXT="`faker-cli -x phrase`"
-FULLTEXT="`/home/tanuj/Code/build-quotesCatogories-Desktop-Debug/quotesCategories`" 
+FULLTEXT="`/home/tanuj/Code/build-quotesCategories-Desktop-Debug/quotesCategories`" 
 firstchar="`echo ${FULLTEXT:0:1}`"
 TEXT="\"`echo ${FULLTEXT:1}`\""
 
