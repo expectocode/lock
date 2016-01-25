@@ -10,9 +10,8 @@ Dependencies
 * scrot
 * Liberation Fonts
 
-The lock screen in action:
+###         The lock screen in action:
 
-##Video
 ![lockscreen video](https://raw.githubusercontent.com/expectocode/lock/master/demonstrations/lockquotes.mp4)
 
 ![Screenshot of lockscreen](https://raw.githubusercontent.com/expectocode/lock/master/demonstrations/screenshot.png)
@@ -28,6 +27,8 @@ Installation
 5. You should now be able to run the script - you can assign it to a keyboard shortcut and just use it
 
 
+------------
+ 
 Use this with xautolock to automatically lock the screen after a set time.
 
 Systemd Unit file (edit for your own use):
