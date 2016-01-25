@@ -12,7 +12,7 @@ Dependencies
 
 ###         The lock screen in action:
 
-![lockscreen video](https://d1wst0behutosd.cloudfront.net/videos/7115111/18263831.480p.mp4?Expires=1453764850&Signature=BZpQoVzanOd9bEf9jnKUBJFz88lakUU2qdq9Xr6OuIHjB~Z941oQMi0sTy5dKZoS0JwynZNhLtMK5J0p163aOF7A9bfqTCJ-yNSkEC~M7QbRu2tDUDhMIWSm3YsoN0tKQQc59dD1q2B3kxvHJVc5XZ16JDm~BJtUSel-M5k8vOsxTkOMHsoHcNp~D~3WGmwwhF-xIoy9IXvv5hjC1fD3E3NkORFb8a8x7DdjRJZsu04G7BLcIasYVV7iU~XkQLqX6PPveZOXL~wtfIQMcjKFkLmWRuJ4ICtzZHe~OKW2f3wTwhDoJu0cXkmfmOTQ3AIK0P9op8FTgiO1-3SCBlPabw__&Key-Pair-Id=APKAJJ6WELAPEP47UKWQ)
+![lockscreen video](https://vid.me/uIJS)
 
 ![Screenshot of lockscreen](https://raw.githubusercontent.com/expectocode/lock/master/demonstrations/screenshot.png)
 
