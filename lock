@@ -30,7 +30,7 @@ elif [ "$firstchar" == "i" ];then #if itcrowd quote
 	LOCKICONDARK="roundmoss"
 elif [ "$firstchar" == "s" ];then #if starwars quote
 	LOCKICONREG="jediwhite"
-    LOCKICONDARK="vader"
+    LOCKICONDARK="empireLogo"
 elif [ "$firstchar" == "p" ];then #if potter quote
 	LOCKICONREG="scarheadwhite"
     LOCKICONDARK="scarhead"
