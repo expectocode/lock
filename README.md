@@ -20,7 +20,7 @@ Dependencies
 
 Installation
 ------------
-1. Install all dependencies - you may need to compile i3lock-color, if you can't be bothered then just skip it. This will still work. Liberation Fonts are also not necessary, you can just edit the script to not use them if you really don't want to install them for some reason
+1. Install all dependencies - you may need to compile i3lock-color, if you can't be bothered then just skip it (you will, obviously, need to have regular i3lock instead). This will still work. Liberation Fonts are also not necessary, you can just edit the script to not use them if you really don't want to install them for some reason
 2. Clone this repo to your hard drive - I recommend somewhere like /opt.
 3. Compile the c++ quote generator (feel free to change out the quotes for your own)
 4. Edit the script: change $quotegenProgram to the name of your compiled c++ quote generator (this should be easy by uncommenting a line I put there)
