@@ -14,7 +14,7 @@ The lock screen in action:
 
 ![lockscreen animation](https://raw.githubusercontent.com/expectocode/lock/master/lockquotes.mp4)
 
-![screen shot of lockscreen])(https://raw.githubusercontent.com/expectocode/lock/master/screenshot.png)
+![screen shot of lockscreen](https://raw.githubusercontent.com/meskarune/i3lock-fancy/master/screenshot.png)
 
 Installation
 ------------
