@@ -12,11 +12,11 @@ Dependencies
 
 ###         The lock screen in action:
 
-![lockscreen video](https://vid.me/uIJS)
-
 ![Screenshot of lockscreen](https://raw.githubusercontent.com/expectocode/lock/master/demonstrations/screenshot.png)
 
 ![GIF of lockscreen](https://raw.githubusercontent.com/expectocode/lock/master/demonstrations/optimized_demo.gif)
+
+[Longer - video demo](https://vid.me/uIJS)
 
 Installation
 ------------
