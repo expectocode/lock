@@ -3,8 +3,7 @@
 # Dependencies: imagemagick, i3lock-color-git, scrot
 
 # get path where the script is located
-# its used for the lock icon
-#killall telegram
+# it's used for the lock icon
 pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd`
 popd > /dev/null
@@ -13,9 +12,6 @@ popd > /dev/null
 #quotegenProgram="$SCRIPTPATH/quoteGeneratorSnapshot" # uncomment this after building the c++ program
 
 IMAGE=$(mktemp).png
-#TEXT="`faker-cli -x phrase`"
-#FULLTEXT="`$quotegenProgram`"
-#FULLTEXT="`shuf -n 1 $SCRIPTPATH/quotes.txt`"
 FULLTEXT="`shuf -n 1 $SCRIPTPATH/quotes.txt`"
 firstchar="`echo ${FULLTEXT:0:1}`"
 TEXT="\"`echo ${FULLTEXT:1}`\""
@@ -29,9 +25,12 @@ LOCKICONDARK="lockdark"
 if [ "$firstchar" == "i" ];then #if itcrowd quote
         LOCKICONREG="roundmoss"
         LOCKICONDARK="roundmoss"
-elif [ "$firstchar" == "s" ];then #if starwars quote
-        LOCKICONREG="jediwhite"
+elif [ "$firstchar" == "s" ];then #if dark side quote
+        LOCKICONREG="empireLogoWhite"
         LOCKICONDARK="empireLogo"
+elif [ "$firstchar" == "j" ];then #if light side quote
+        LOCKICONREG="jediwhite"
+        LOCKICONDARK="jedi"
 elif [ "$firstchar" == "p" ];then #if potter quote
         LOCKICONREG="scarheadwhite"
         LOCKICONDARK="scarhead"
@@ -71,7 +70,7 @@ if [ "$COLOR" -gt "$VALUE" ]; then #white background image and black text
     PARAM='--textcolor=00000000 --insidecolor=0ad65c1c --ringcolor=0000003e \
         --linecolor=00000000 --keyhlcolor=74e85888 --ringvercolor=ffffff00 \
         --insidevercolor=ffffff1c --ringwrongcolor=ffffff55 --insidewrongcolor=bf09095c'
-else #black
+else #black background with light text
     convert $IMAGE -level 0%,100%,0.6 \
         -filter Gaussian -resize 20% -define filter:sigma=8.5 -resize 500.5% \
         -font Liberation-Sans -pointsize 32 -fill white -gravity Center \
